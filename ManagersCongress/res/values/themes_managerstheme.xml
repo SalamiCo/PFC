@@ -3,7 +3,7 @@
 <!-- Generated with http://android-holo-colors.com -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <style name="ManagersTheme" parent="android:Theme.Light">
+  <style name="ManagersTheme" parent="AppTheme">
 
     <item name="android:editTextStyle">@style/EditTextManagersTheme</item>
 
