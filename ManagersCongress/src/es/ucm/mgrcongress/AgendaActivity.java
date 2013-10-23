@@ -31,22 +31,22 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
         // Set up the dropdown list navigation in the action bar.
         actionBar.setListNavigationCallbacks(new ArrayAdapter<String>(
             actionBar.getThemedContext(), android.R.layout.simple_list_item_1, android.R.id.text1, new String[] {
-                getString(R.string.title_section1), getString(R.string.title_section2),
-                getString(R.string.title_section3), }), this);
+                getString(R.string.title_section_agenda), getString(R.string.title_section_speakers),
+                getString(R.string.title_section_details), }), this);
     }
 
     @Override
     public void onRestoreInstanceState (final Bundle savedInstanceState) {
         // Restore the previously serialized current dropdown position.
         if (savedInstanceState.containsKey(STATE_SELECTED_NAVITEM)) {
-            getActionBar().setSelectedNavigationItem(savedInstanceState.getInt(STATE_SELECTED_NAVITEM));
+            getSupportActionBar().setSelectedNavigationItem(savedInstanceState.getInt(STATE_SELECTED_NAVITEM));
         }
     }
 
     @Override
     public void onSaveInstanceState (final Bundle outState) {
         // Serialize the current dropdown position.
-        outState.putInt(STATE_SELECTED_NAVITEM, getActionBar().getSelectedNavigationIndex());
+        outState.putInt(STATE_SELECTED_NAVITEM, getSupportActionBar().getSelectedNavigationIndex());
     }
 
     @Override
@@ -61,10 +61,12 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
         // When the given dropdown item is selected, show its contents in the
         // container view.
         final Fragment fragment = new DummySectionFragment();
+        
         final Bundle args = new Bundle();
         args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
         fragment.setArguments(args);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        
         return true;
     }
 

@@ -8,8 +8,8 @@
     <string name="title_conference_list">Conferences</string>
     <string name="title_conference_detail">Conference Detail</string>
     <string name="title_activity_agenda">Agenda</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section_agenda">Agenda</string>
+    <string name="title_section_speakers">Speakers</string>
+    <string name="title_section_details">Event Details</string>
 
 </resources>
