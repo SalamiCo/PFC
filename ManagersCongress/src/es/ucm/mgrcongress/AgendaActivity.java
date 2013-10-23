@@ -40,7 +40,12 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
         
         // Data for the agenda
         agendaCursor = new MatrixCursor(new String[]{"_id", "title", "description", "day", "start_time"});
-        agendaCursor.addRow(new Object[]{1, "Titulo", null, "11 Nov", ""});
+        agendaCursor.addRow(new Object[]{1, "Recepción de los asistentes y entrega de documentación y acreditaciones.", null, "11 Nov", "12:00"});
+        agendaCursor.addRow(new Object[]{2, "Inauguración de las XXXI Jornadas de Gerencia Universitaria.", null, "11 Nov", "13:00"});
+        agendaCursor.addRow(new Object[]{3, "Conferencia: Reinventando la toma de decisiones en la Universidad.", "José Ramón Chaves García. Magistrado de lo contencioso-administrativo.", "11 Nov", "13:15"});
+        agendaCursor.addRow(new Object[]{4, "Cóctel en el Paraninfo.", null, "11 Nov", "14:15"});
+        agendaCursor.addRow(new Object[]{5, "Constitución de los grupos de trabajo en librerías emblemáticas de Madrid: La Central, Ocho y Medio y Tipos Infames.", null, "11 Nov", "17:00"});
+        agendaCursor.addRow(new Object[]{6, "Cóctel en el Palacio de Cibeles (sede del Ayuntamiento de Madrid)", null, "11 Nov", "21:30"});
     }
 
     @Override
