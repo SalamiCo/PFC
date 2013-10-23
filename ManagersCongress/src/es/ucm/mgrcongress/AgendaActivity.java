@@ -1,5 +1,6 @@
 package es.ucm.mgrcongress;
 
+import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,6 +18,9 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
      * The serialization (saved instance state) Bundle key representing the current dropdown position.
      */
     private static final String STATE_SELECTED_NAVITEM = "selected_navitem";
+    
+    
+    private MatrixCursor agendaCursor;
 
     @Override
     protected void onCreate (final Bundle savedInstanceState) {
@@ -33,6 +37,10 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
             actionBar.getThemedContext(), android.R.layout.simple_list_item_1, android.R.id.text1, new String[] {
                 getString(R.string.title_section_agenda), getString(R.string.title_section_speakers),
                 getString(R.string.title_section_details), }), this);
+        
+        // Data for the agenda
+        agendaCursor = new MatrixCursor(new String[]{"_id", "title", "description", "day", "start_time"});
+        agendaCursor.addRow(new Object[]{1, "Titulo", null, "11 Nov", ""});
     }
 
     @Override
