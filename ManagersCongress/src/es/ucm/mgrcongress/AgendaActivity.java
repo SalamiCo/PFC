@@ -43,12 +43,29 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
         
         // Data for the agenda
         agendaCursor = new MatrixCursor(new String[]{"_id", "title", "description", "day", "start_time"});
+        //First day
         agendaCursor.addRow(new Object[]{1, "Recepción de los asistentes y entrega de documentación y acreditaciones.", null, "11 Nov", "12:00"});
         agendaCursor.addRow(new Object[]{2, "Inauguración de las XXXI Jornadas de Gerencia Universitaria.", null, "11 Nov", "13:00"});
         agendaCursor.addRow(new Object[]{3, "Conferencia: Reinventando la toma de decisiones en la Universidad.", "José Ramón Chaves García. Magistrado de lo contencioso-administrativo.", "11 Nov", "13:15"});
         agendaCursor.addRow(new Object[]{4, "Cóctel en el Paraninfo.", null, "11 Nov", "14:15"});
         agendaCursor.addRow(new Object[]{5, "Constitución de los grupos de trabajo en librerías emblemáticas de Madrid: La Central, Ocho y Medio y Tipos Infames.", null, "11 Nov", "17:00"});
         agendaCursor.addRow(new Object[]{6, "Cóctel en el Palacio de Cibeles (sede del Ayuntamiento de Madrid)", null, "11 Nov", "21:30"});
+        //Second day
+        agendaCursor.addRow(new Object[]{7, "Mesa redonda: Reducción de costes y optimización de recursos.", "Moderador: Teodoro Conde Minaya. Gerente UAM.", "12 Nov", "09:00"});
+        agendaCursor.addRow(new Object[]{8, " Pausa-café.", null, "12 Nov", "11:00"});
+        agendaCursor.addRow(new Object[]{9, "Talleres.", null, "12 Nov", "11:30"});
+        agendaCursor.addRow(new Object[]{10, "Mesa redonda: Alternativas a la financiación pública y captación de fondos.", "Moderador: Jordi Montserrat Garrocho. Gerente UNED.", "12 Nov", "12:30"});
+        agendaCursor.addRow(new Object[]{11, "Almuerzo en el Museo del Traje.", null, "12 Nov", "14:30"});
+        agendaCursor.addRow(new Object[]{12, "Conferencia: Gerencia en la Universidad: Visión en Acción.", " Javier Oliva López", "12 Nov", "16:30"});
+        agendaCursor.addRow(new Object[]{13, "Mesa de gerentes.", null, "12 Nov", "17:30"});
+        agendaCursor.addRow(new Object[]{14, "Cena institucional.", null, "12 Nov", "21:30"});
+        //Third day
+        agendaCursor.addRow(new Object[]{15, "Conferencia: \"Educación universitaria y Fundaciones americanas\"", "Eelco Keij. Especialista en fundraising. Fundador de KeyLance Consultancy LLC en Nueva York.", "13 Nov", "09:30"});
+        agendaCursor.addRow(new Object[]{16, "Talleres.", null, "13 Nov", "10:30"});
+        agendaCursor.addRow(new Object[]{17, "Pausa-café.", null, "13 Nov", "11:30"});
+        agendaCursor.addRow(new Object[]{18, "Mesa redonda: Gestión de personas en tiempos de crisis. Nuevos enfoques en la gestión de los recursos humanos.", "Moderadora: Carmen García Elias. Gerente UPM", "13 Nov", "12:00"});
+        agendaCursor.addRow(new Object[]{19, "Clausura de las jornadas.", null, "13 Nov", "14:00"});
+        agendaCursor.addRow(new Object[]{20, "Cóctel de despedida.", null, "13 Nov", "14:15"});
         
         // Setting the adapter
         ListAdapter adapter = new ListAdapter(getApplicationContext(), agendaCursor);
