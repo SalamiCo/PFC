@@ -11,5 +11,9 @@
     <string name="title_section_agenda">Agenda</string>
     <string name="title_section_speakers">Speakers</string>
     <string name="title_section_details">Event Details</string>
+    <string name="agenda_day">Day</string>
+    <string name="agenda_start_time">Start time</string>
+    <string name="agenda_title">Title</string>
+    <string name="agenda_description">Description</string>
 
 </resources>
