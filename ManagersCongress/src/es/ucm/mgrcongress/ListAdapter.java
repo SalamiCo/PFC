@@ -52,7 +52,7 @@ public class ListAdapter extends BaseAdapter {
             
         } else holder = (ViewHolder) convertView.getTag();
         
-        // FIXME Perhaps exists a better way to do this
+        // FIXME Maybe exists a better way to do this
         // _id: 0 title:1 description:2 day:3 start_time:4
         holder.holderDay.setText(myCursor.getString(3));
         holder.holderStartTime.setText(myCursor.getString(4));
