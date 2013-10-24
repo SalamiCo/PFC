@@ -1,5 +1,6 @@
 package es.ucm.mgrcongress;
 
+
 import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -20,6 +22,8 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
     private static final String STATE_SELECTED_NAVITEM = "selected_navitem";
     
     private MatrixCursor agendaCursor;
+    
+    private ListView list;
 
     @Override
     protected void onCreate (final Bundle savedInstanceState) {
@@ -45,6 +49,11 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
         agendaCursor.addRow(new Object[]{4, "Cóctel en el Paraninfo.", null, "11 Nov", "14:15"});
         agendaCursor.addRow(new Object[]{5, "Constitución de los grupos de trabajo en librerías emblemáticas de Madrid: La Central, Ocho y Medio y Tipos Infames.", null, "11 Nov", "17:00"});
         agendaCursor.addRow(new Object[]{6, "Cóctel en el Palacio de Cibeles (sede del Ayuntamiento de Madrid)", null, "11 Nov", "21:30"});
+        
+        // Setting the adapter
+        ListAdapter adapter = new ListAdapter(getApplicationContext(), agendaCursor);
+        list = (ListView) findViewById(R.id.list);
+        list.setAdapter(adapter);
     }
 
     @Override
