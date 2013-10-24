@@ -19,7 +19,6 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
      */
     private static final String STATE_SELECTED_NAVITEM = "selected_navitem";
     
-    
     private MatrixCursor agendaCursor;
 
     @Override
