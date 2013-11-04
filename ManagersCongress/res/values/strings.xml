@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ManagersCongress</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <!-- Application -->
+    <string name="app_name">Managers Congress 2013</string>
+    
     <string name="title_conference_list">Conferences</string>
     <string name="title_conference_detail">Conference Detail</string>
-    <string name="title_activity_agenda">Agenda</string>
+    <string name="title_activity_home">Mgr. Congr. 2013</string>
     <string name="title_section_agenda">Agenda</string>
     <string name="title_section_speakers">Speakers</string>
     <string name="title_section_details">Event Details</string>
@@ -15,5 +14,8 @@
     <string name="agenda_start_time">Start time</string>
     <string name="agenda_title">Title</string>
     <string name="agenda_description">Description</string>
+    
+    <!-- Action Bar Actions -->
+    <string name="action_settings">Settings</string>
 
 </resources>
