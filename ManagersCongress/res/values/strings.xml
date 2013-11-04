@@ -17,5 +17,9 @@
     
     <!-- Action Bar Actions -->
     <string name="action_settings">Settings</string>
+    
+    <!-- Speakers -->
+    <string name="speaker_picture">Speaker Picture</string>
+    <string name="speaker_name">Speaker Name</string>
 
 </resources>

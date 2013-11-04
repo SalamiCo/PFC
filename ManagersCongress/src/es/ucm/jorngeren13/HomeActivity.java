@@ -67,7 +67,4 @@ public class HomeActivity extends JG13Activity implements ActionBar.OnNavigation
         
         return true;
     }
-
-    
-
 }
