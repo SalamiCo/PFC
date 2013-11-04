@@ -42,7 +42,7 @@ public class ListAdapter extends BaseAdapter {
         
         // Create a new view if is not created before
         if(convertView == null){
-            convertView = myInflater.inflate(R.layout.list_row, null);
+            convertView = myInflater.inflate(R.layout.agenda_list_row, null);
             holder = new ViewHolder();
             holder.holderDay = (TextView) convertView.findViewById(R.id.day);
             holder.holderStartTime = (TextView) convertView.findViewById(R.id.start_time);

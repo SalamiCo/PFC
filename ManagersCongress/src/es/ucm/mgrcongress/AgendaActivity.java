@@ -120,7 +120,7 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
             list = (ListView) rootView.findViewById(R.id.list);
             String[] cursorFields = new String[] {"day", "start_time", "title", "description" };
             int[] viewFields = new int[]{R.id.day, R.id.start_time, R.id.title, R.id.description};
-            SimpleCursorAdapter adapter = new SimpleCursorAdapter(rootView.getContext(),R.layout.list_row,
+            SimpleCursorAdapter adapter = new SimpleCursorAdapter(rootView.getContext(),R.layout.agenda_list_row,
                                                                 AgendaActivity.agendaCursor,cursorFields,viewFields,0);
             list.setAdapter(adapter);
             return rootView;
