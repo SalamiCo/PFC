@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
     
-    <TableRow >
-        <TextView 
-            android:id="@+id/day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/agenda_day"/>
-        <TextView 
-            android:id="@+id/start_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/agenda_start_time"/>
-    </TableRow>
+   
+       	<TextView 
+           android:id="@+id/day"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="10dip"
+           android:text="@string/agenda_day"/>
+       
+       	<TextView 
+           android:id="@+id/start_time"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_toRightOf="@id/day"
+           android:layout_marginLeft="20dip"
+           android:text="@string/agenda_start_time"/>
+
+       	<TextView 
+           android:id="@+id/title"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/day"
+           android:layout_marginLeft="10dip"
+           android:text="@string/agenda_title"/>
+ 
+   		<TextView 
+		    android:id="@+id/description"
+		    android:layout_width="wrap_content"
+	       	android:layout_height="wrap_content"
+	       	android:layout_below="@id/title"
+	        android:layout_marginLeft="10dip"
+	        android:text="@string/agenda_description" />
     
-    <TableRow >
-        <TextView 
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/agenda_title"/>
-    </TableRow>
-    
-    <TableRow >
-    	<TextView 
-    	    android:id="@+id/description"
-    	    android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/agenda_description" />
-    </TableRow>
     
 
-</TableLayout>
+</RelativeLayout>

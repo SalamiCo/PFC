@@ -4,12 +4,12 @@ package es.ucm.mgrcongress;
 import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
@@ -21,9 +21,7 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
      */
     private static final String STATE_SELECTED_NAVITEM = "selected_navitem";
     
-    private MatrixCursor agendaCursor;
-    
-    private ListView list;
+    private static MatrixCursor agendaCursor;
 
     @Override
     protected void onCreate (final Bundle savedInstanceState) {
@@ -56,7 +54,7 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
         agendaCursor.addRow(new Object[]{9, "Talleres.", null, "12 Nov", "11:30"});
         agendaCursor.addRow(new Object[]{10, "Mesa redonda: Alternativas a la financiación pública y captación de fondos.", "Moderador: Jordi Montserrat Garrocho. Gerente UNED.", "12 Nov", "12:30"});
         agendaCursor.addRow(new Object[]{11, "Almuerzo en el Museo del Traje.", null, "12 Nov", "14:30"});
-        agendaCursor.addRow(new Object[]{12, "Conferencia: Gerencia en la Universidad: Visión en Acción.", " Javier Oliva López", "12 Nov", "16:30"});
+        agendaCursor.addRow(new Object[]{12, "Conferencia: Gerencia en la Universidad: Visión en Acción.", "Javier Oliva López", "12 Nov", "16:30"});
         agendaCursor.addRow(new Object[]{13, "Mesa de gerentes.", null, "12 Nov", "17:30"});
         agendaCursor.addRow(new Object[]{14, "Cena institucional.", null, "12 Nov", "21:30"});
         //Third day
@@ -67,10 +65,6 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
         agendaCursor.addRow(new Object[]{19, "Clausura de las jornadas.", null, "13 Nov", "14:00"});
         agendaCursor.addRow(new Object[]{20, "Cóctel de despedida.", null, "13 Nov", "14:15"});
         
-        // Setting the adapter
-        ListAdapter adapter = new ListAdapter(getApplicationContext(), agendaCursor);
-        list = (ListView) findViewById(R.id.list);
-        list.setAdapter(adapter);
     }
 
     @Override
@@ -98,35 +92,37 @@ public class AgendaActivity extends MgrActivity implements ActionBar.OnNavigatio
     public boolean onNavigationItemSelected (final int position, final long id) {
         // When the given dropdown item is selected, show its contents in the
         // container view.
-        final Fragment fragment = new DummySectionFragment();
+        final Fragment fragment = new AgendaSectionFragment();
         
-        final Bundle args = new Bundle();
+        /*final Bundle args = new Bundle();
         args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
-        fragment.setArguments(args);
+        fragment.setArguments(args);*/
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         
         return true;
     }
 
-    /**
-     * A dummy fragment representing a section of the app, but that simply displays dummy text.
-     */
-    public static class DummySectionFragment extends Fragment {
+    public static class AgendaSectionFragment extends Fragment {
         /**
-         * The fragment argument representing the section number for this fragment.
+         * The fragment argument representing the Agenda.
          */
-        public static final String ARG_SECTION_NUMBER = "section_number";
 
-        public DummySectionFragment () {
+        private ListView list;
+
+        public AgendaSectionFragment () {
         }
 
         @Override
         public View onCreateView (
             final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState)
         {
-            final View rootView = inflater.inflate(R.layout.fragment_agenda_dummy, container, false);
-            final TextView dummyTextView = (TextView) rootView.findViewById(R.id.section_label);
-            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+            final View rootView = inflater.inflate(R.layout.activity_agenda, container, false);
+            list = (ListView) rootView.findViewById(R.id.list);
+            String[] cursorFields = new String[] {"day", "start_time", "title", "description" };
+            int[] viewFields = new int[]{R.id.day, R.id.start_time, R.id.title, R.id.description};
+            SimpleCursorAdapter adapter = new SimpleCursorAdapter(rootView.getContext(),R.layout.list_row,
+                                                                AgendaActivity.agendaCursor,cursorFields,viewFields,0);
+            list.setAdapter(adapter);
             return rootView;
         }
     }
