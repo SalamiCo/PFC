@@ -7,14 +7,13 @@ public final class JG13Data {
 
     private static long index = 0;
     private static MatrixCursor agendaCursor;
+    private static MatrixCursor speakersCursor;
 
     public static Cursor getAgendaCursor () {
         if (agendaCursor == null) {
             agendaCursor = new MatrixCursor(new String[] { "_id", "title", "description", "day", "start_time" });
 
             // First day
-            agendaRow(
-                "Recepción de los asistentes y entrega de documentación y acreditaciones.", null, "11 Nov", "12:00");
             agendaRow(
                 "Recepción de los asistentes y entrega de documentación y acreditaciones.", null, "11 Nov", "12:00");
             agendaRow("Inauguración de las XXXI Jornadas de Gerencia Universitaria.", null, "11 Nov", "13:00");
@@ -61,6 +60,28 @@ public final class JG13Data {
 
     private static void agendaRow (String title, String subtitle, String date, String time) {
         agendaCursor.addRow(new Object[] { ++index, title, subtitle, date, time });
+    }
+    
+    public static Cursor getSpeakersCursor(){
+        if(speakersCursor == null){
+            speakersCursor = new MatrixCursor(new String[] { "_id", "name", "position", "picture" });
+            index = 0;
+            
+            speakerRow("Jose Ramón Chaves García", "Magistrado de lo Contencioso-Administrativo", null);
+            speakerRow("Teodoro Conde Minaya", "Gerente de la UAM", null);
+            speakerRow("Carmen García Elías", "Gerente de la UPM", null);
+            speakerRow(
+                "Eelco Keij", "Especialista en fundraising. Fundador de KeyLance Consultancy LLC en Nueva York", null);
+            speakerRow("Jordi Montserrat Garrocho", "Gerente de la UNED", null);
+            speakerRow(
+                "Javier Oliva Jópez", "Licenciado en Ciencias Económicas y Empresariales en la especialidad de Dirección y Gestión de empresas", null);
+        }
+        
+        return speakersCursor;
+    }
+    
+    private static void speakerRow(String name, String position, String picture){
+        speakersCursor.addRow(new Object[] { ++index, name, position, picture });
     }
 
     private JG13Data () {

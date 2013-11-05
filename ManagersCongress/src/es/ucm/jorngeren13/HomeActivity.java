@@ -1,16 +1,9 @@
 package es.ucm.jorngeren13;
 
 
-import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SimpleCursorAdapter;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 
@@ -61,8 +54,14 @@ public class HomeActivity extends JG13Activity implements ActionBar.OnNavigation
 
     @Override
     public boolean onNavigationItemSelected (final int position, final long id) {
-        final Fragment fragment = new AgendaFragment();
-        
+        Fragment fragment = new Fragment();
+        if(position == 0){ //Agenda
+            fragment = new AgendaFragment();
+            
+        }else if(position == 1){ //Speakers
+            fragment = new SpeakersFragment();
+        }
+
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         
         return true;

@@ -1,14 +1,11 @@
 package es.ucm.jorngeren13;
 
-import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-
-import com.actionbarsherlock.app.SherlockFragment;
 
 public final class AgendaFragment extends JG13Fragment {
 
