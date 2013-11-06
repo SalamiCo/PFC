@@ -20,16 +20,23 @@
     <string name="speaker_position">Ponente Posición</string>
     
     <!-- Event Details -->
-    <string name="details_headquarters">
-        Lugares:
-        \n\n
+    <string name="details_headquarters">Lugares:</string>
+    <string name="details_headquarters_info_1">
         Paraninfo de la UCM\n
         C/ San Bernardo, 49
-        \n\n
+    </string>
+    <string name="details_headquarters_info_2">    
         Museo del Traje\n
         Avda. Juan de Herrera, 2
     </string>
-    <string name="details_map">Lugares del Mapa</string>
+    <string name="details_map">Lugares del mapa</string>
+    <string name="details_contact">Contacto:</string>
+    <string name="details_contact_info">
+        Correo electronico: jornadas.gerencia@ucm.es
+        \n
+       Telefonos: 91 394 35 70 - 91 394 34 64
+    </string>
+    <string name="details_button">Mapa</string>
         
 
 </resources>
