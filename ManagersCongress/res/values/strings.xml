@@ -5,7 +5,7 @@
     <string name="app_name">Managers Congress 2013</string>
     
     <string name="title_conference_list">Conferences</string>
-    <string name="title_activity_home">Mgr. Congr. 2013</string>
+    <string name="title_activity_home">Managers Congress</string>
     <string name="title_section_agenda">Agenda</string>
     <string name="title_section_speakers">Speakers</string>
     <string name="title_section_details">Info</string>
@@ -20,6 +20,7 @@
     <string name="speaker_position">Speaker Position</string>
     
     <!-- Event Details -->
+    <string name="toast_error_map">Unable to show map</string>
     <string name="details_headquarters">Headquarters:</string>
     <string name="details_headquarters_info_1">
         Paraninfo de la UCM\n

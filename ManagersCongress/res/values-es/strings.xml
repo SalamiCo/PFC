@@ -5,7 +5,7 @@
     <string name="app_name">Jornadas de Gerencia 2013</string>
     
     <string name="title_conference_list">Conferencias</string>
-    <string name="title_activity_home">Jor. Geren. 2013</string>
+    <string name="title_activity_home">Jornadas de Gerencia</string>
     <string name="title_section_agenda">Programa</string>
     <string name="title_section_speakers">Ponentes</string>
     <string name="title_section_details">Info</string>
@@ -20,6 +20,7 @@
     <string name="speaker_position">Ponente Posición</string>
     
     <!-- Event Details -->
+    <string name="toast_error_map">No se pudo mostrar el mapa</string>
     <string name="details_headquarters">Lugares:</string>
     <string name="details_headquarters_info_1">
         Paraninfo de la UCM\n
