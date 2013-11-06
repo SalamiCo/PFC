@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    >
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
     
     <TextView 
         android:id="@+id/details_place_info"
@@ -12,16 +16,27 @@
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"/>
     
-    <ImageView 
+    <ImageView
         android:id="@+id/details_map"
-        android:layout_below="@id/details_place_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/details_place_info"
         android:layout_marginTop="10dip"
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
         android:contentDescription="@string/details_map"
-        android:src="@drawable/map"/>"
+        android:src="@drawable/map" />
+    
+    <TextView 
+        android:id="@+id/details_contact"
+        android:layout_below="@id/details_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:text="@string/details_contact"/>
     
 
 </RelativeLayout>
+</ScrollView>
