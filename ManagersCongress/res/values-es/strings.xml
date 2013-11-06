@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Application -->
+    <string name="app_name">Jornadas de Gerencia 2013</string>
+    
+    <string name="title_conference_list">Conferencias</string>
+    <string name="title_activity_home">Jor. Geren. 2013</string>
+    <string name="title_section_agenda">Programa</string>
+    <string name="title_section_speakers">Ponentes</string>
+    <string name="title_section_details">Detalles del evento</string>
+    <string name="agenda_day">Día</string>
+    <string name="agenda_start_time">Hora</string>
+    <string name="agenda_title">Título</string>
+    <string name="agenda_description">Descripción</string>
+    
+    <!-- Speakers -->
+    <string name="speaker_picture">Foto Ponente</string>
+    <string name="speaker_name">Nombre Ponente</string>
+    <string name="speaker_position">Ponente Posición</string>
+    
+    <!-- Event Details -->
+    <string name="details_headquarters">
+        Lugares:
+        \n\n
+        Paraninfo de la UCM\n
+        C/ San Bernardo, 49
+        \n\n
+        Museo del Traje\n
+        Avda. Juan de Herrera, 2
+    </string>
+    <string name="details_map">Lugares del Mapa</string>
+        
+
+</resources>
