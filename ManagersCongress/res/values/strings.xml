@@ -30,6 +30,13 @@
         Avda. Juan de Herrera, 2
     </string>
     <string name="details_map">Places map</string>
+    <string name="details_contact">
+        Contacto:
+        \n\n
+        Correo electronico: jornadas.gerencia@ucm.es
+        \n
+        Telefonos: 91 394 35 70 - 91 394 34 64
+    </string>
         
 
 </resources>
