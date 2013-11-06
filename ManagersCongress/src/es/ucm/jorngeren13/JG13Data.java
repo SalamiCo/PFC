@@ -25,7 +25,7 @@ public final class JG13Data {
                 "Constitución de los grupos de trabajo en librerías emblemáticas de Madrid: La Central, Ocho y Medio y Tipos Infames.",
                 null, "11 Nov", "17:00");
             agendaRow("Cóctel en el Palacio de Cibeles (sede del Ayuntamiento de Madrid)", null, "11 Nov", "21:30");
-            
+
             // Second day
             agendaRow(
                 "Mesa redonda: Reducción de costes y optimización de recursos.",
@@ -40,7 +40,7 @@ public final class JG13Data {
                 "Conferencia: Gerencia en la Universidad: Visión en Acción.", "Javier Oliva López", "12 Nov", "16:30");
             agendaRow("Mesa de gerentes.", null, "12 Nov", "17:30");
             agendaRow("Cena institucional.", null, "12 Nov", "21:30");
-            
+
             // Third day
             agendaRow(
                 "Conferencia: \"Educación universitaria y Fundaciones americanas\"",
@@ -61,26 +61,29 @@ public final class JG13Data {
     private static void agendaRow (String title, String subtitle, String date, String time) {
         agendaCursor.addRow(new Object[] { ++index, title, subtitle, date, time });
     }
-    
-    public static Cursor getSpeakersCursor(){
-        if(speakersCursor == null){
+
+    public static Cursor getSpeakersCursor () {
+        if (speakersCursor == null) {
             speakersCursor = new MatrixCursor(new String[] { "_id", "name", "position", "picture" });
-            index = 0;
-            
-            speakerRow("Jose Ramón Chaves García", "Magistrado de lo Contencioso-Administrativo", null);
-            speakerRow("Teodoro Conde Minaya", "Gerente de la UAM", null);
-            speakerRow("Carmen García Elías", "Gerente de la UPM", null);
+
             speakerRow(
-                "Eelco Keij", "Especialista en fundraising. Fundador de KeyLance Consultancy LLC en Nueva York", null);
-            speakerRow("Jordi Montserrat Garrocho", "Gerente de la UNED", null);
+                "Jose Ramón Chaves García", "Magistrado de lo Contencioso-Administrativo", R.drawable.speaker_chaves);
+            speakerRow("Teodoro Conde Minaya", "Gerente de la UAM", R.drawable.speaker_conde_minaya);
+            speakerRow("Carmen García Elías", "Gerente de la UPM", R.drawable.speaker_garcia_elias);
             speakerRow(
-                "Javier Oliva Jópez", "Licenciado en Ciencias Económicas y Empresariales en la especialidad de Dirección y Gestión de empresas", null);
+                "Eelco Keij", "Especialista en fundraising. Fundador de KeyLance Consultancy LLC en Nueva York",
+                R.drawable.speaker_keij);
+            speakerRow("Jordi Montserrat Garrocho", "Gerente de la UNED", R.drawable.speaker_montserrat);
+            speakerRow(
+                "Javier Oliva Jópez",
+                "Licenciado en Ciencias Económicas y Empresariales en la especialidad de Dirección y Gestión de empresas",
+                R.drawable.speaker_oliva);
         }
-        
+
         return speakersCursor;
     }
-    
-    private static void speakerRow(String name, String position, String picture){
+
+    private static void speakerRow (String name, String position, int picture) {
         speakersCursor.addRow(new Object[] { ++index, name, position, picture });
     }
 

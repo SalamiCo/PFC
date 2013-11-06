@@ -18,10 +18,10 @@ public class SpeakersFragment extends JG13Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_agenda, container, false);
         list = (ListView) rootView.findViewById(R.id.list);
         
-        String[] cursorFields = new String[] { "name", "position" };
-        int[] viewFields = new int[] { R.id.speaker_name, R.id.speaker_position };
+        String[] cursorFields = new String[] { "name", "position", "picture" };
+        int[] viewFields = new int[] { R.id.speaker_name, R.id.speaker_position, R.id.speaker_picture };
         
-        list.setAdapter(new SimpleCursorAdapter(rootView.getContext(), R.layout.speakers_list_row, JG13Data.getSpeakersCursor(), cursorFields, viewFields, 0));
+        list.setAdapter(new SimpleCursorAdapter(rootView.getContext(), R.layout.listitem_speakers, JG13Data.getSpeakersCursor(), cursorFields, viewFields, 0));
         
         return rootView;
     }
