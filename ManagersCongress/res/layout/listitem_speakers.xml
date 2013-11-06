@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/speaker_picture"
         android:ellipsize="marquee"
-        android:text="@string/speaker_name"/>
+        android:text="@string/speaker_name"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
     
     <TextView 
         android:id="@+id/speaker_position"
