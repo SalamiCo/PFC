@@ -19,4 +19,8 @@ public abstract class JG13Fragment extends SherlockFragment {
 
         this.activity = (JG13Activity) activity;
     }
+    
+    protected JG13Activity getInternalActivity () {
+        return activity;
+    }
 }

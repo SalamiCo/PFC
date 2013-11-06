@@ -13,7 +13,6 @@ public class EventDetailsFragment extends JG13Fragment {
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        
         final View rootView = inflater.inflate(R.layout.fragment_event_details, container, false);
         map = (ImageView) rootView.findViewById(R.id.details_map);
         
