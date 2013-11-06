@@ -22,8 +22,8 @@ public class EventDetailsFragment extends JG13Fragment {
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_event_details, container, false);
         
-//        details_info_1 = (Button) rootView.findViewById(R.id.details_button_info_1);
-//        details_info_2 = (Button) rootView.findViewById(R.id.details_button_info_2);
+        details_info_1 = (Button) rootView.findViewById(R.id.details_button_info_1);
+        details_info_2 = (Button) rootView.findViewById(R.id.details_button_info_2);
         details_info_1.setOnClickListener(new OnClickListener() {
             
             @Override
