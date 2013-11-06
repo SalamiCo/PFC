@@ -8,7 +8,7 @@
     <string name="title_activity_home">Mgr. Congr. 2013</string>
     <string name="title_section_agenda">Agenda</string>
     <string name="title_section_speakers">Speakers</string>
-    <string name="title_section_details">Event Details</string>
+    <string name="title_section_details">Info</string>
     <string name="agenda_day">Day</string>
     <string name="agenda_start_time">Start time</string>
     <string name="agenda_title">Title</string>
