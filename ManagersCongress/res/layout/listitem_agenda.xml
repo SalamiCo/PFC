@@ -25,7 +25,8 @@
            android:layout_height="wrap_content"
            android:layout_below="@id/day"
            android:layout_marginLeft="10dip"
-           android:text="@string/agenda_title"/>
+           android:text="@string/agenda_title"
+           android:textAppearance="?android:attr/textAppearanceMedium"/>
  
    		<TextView 
 		    android:id="@+id/description"
