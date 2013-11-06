@@ -16,7 +16,7 @@
         android:id="@+id/speaker_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/picture"
+        android:layout_toRightOf="@id/speaker_picture"
         android:ellipsize="marquee"
         android:text="@string/speaker_name"/>
     
@@ -24,7 +24,7 @@
         android:id="@+id/speaker_position"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/picture"
+        android:layout_toRightOf="@id/speaker_picture"
         android:layout_below="@id/speaker_name"
         android:ellipsize="marquee"
         android:text="@string/speaker_position"/>
