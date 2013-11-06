@@ -22,5 +22,18 @@
     <string name="speaker_picture">Speaker Picture</string>
     <string name="speaker_name">Speaker Name</string>
     <string name="speaker_position">Speaker Position</string>
+    
+    <!-- Event Details -->
+    <string name="details_headquarters">
+        Headquarters:
+        \n\n
+        Paraninfo de la UCM\n
+        C/ San Bernardo, 49
+        \n\n
+        Museo del Traje\n
+        Avda. Juan de Herrera, 2
+    </string>
+    <string name="details_map">Places map</string>
+        
 
 </resources>
