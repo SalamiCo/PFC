@@ -1,6 +1,5 @@
 package es.ucm.jorngeren13;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.widget.ArrayAdapter;
@@ -27,8 +26,7 @@ public class HomeActivity extends JG13Activity implements ActionBar.OnNavigation
             actionBar.getThemedContext(), android.R.layout.simple_list_item_1, android.R.id.text1, new String[] {
                 getString(R.string.title_section_agenda), getString(R.string.title_section_speakers),
                 getString(R.string.title_section_details), }), this);
-        
-        
+
     }
 
     @Override
@@ -55,15 +53,20 @@ public class HomeActivity extends JG13Activity implements ActionBar.OnNavigation
     @Override
     public boolean onNavigationItemSelected (final int position, final long id) {
         Fragment fragment = new Fragment();
-        if(position == 0){ //Agenda
-            fragment = new AgendaFragment();
-            
-        }else if(position == 1){ //Speakers
-            fragment = new SpeakersFragment();
+
+        switch (position) {
+            case 0: {
+                fragment = new AgendaFragment();
+                break;
+            }
+            case 1: {
+                fragment = new SpeakersFragment();
+                break;
+            }
         }
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
-        
+
         return true;
     }
 }
