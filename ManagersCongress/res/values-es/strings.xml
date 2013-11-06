@@ -8,7 +8,7 @@
     <string name="title_activity_home">Jor. Geren. 2013</string>
     <string name="title_section_agenda">Programa</string>
     <string name="title_section_speakers">Ponentes</string>
-    <string name="title_section_details">Detalles del evento</string>
+    <string name="title_section_details">Info</string>
     <string name="agenda_day">Día</string>
     <string name="agenda_start_time">Hora</string>
     <string name="agenda_title">Título</string>
