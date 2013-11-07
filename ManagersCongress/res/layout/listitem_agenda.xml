@@ -4,6 +4,7 @@
     android:layout_height="wrap_content" >
 
     <include
+        android:id="@+id/header"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         layout="@layout/listitem_agenda_header" />

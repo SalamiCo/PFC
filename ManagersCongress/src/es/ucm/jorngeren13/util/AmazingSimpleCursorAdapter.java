@@ -1,7 +1,6 @@
 package es.ucm.jorngeren13.util;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,8 +9,11 @@ import android.database.DatabaseUtils;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.foound.widget.AmazingAdapter;
+
+import es.ucm.jorngeren13.R;
 
 public class AmazingSimpleCursorAdapter extends AmazingAdapter {
 
@@ -19,7 +21,9 @@ public class AmazingSimpleCursorAdapter extends AmazingAdapter {
     private final SimpleCursorAdapter simpleCursorAdapter;
 
     /** Sections of the list */
-    private final List<Object> sections = new ArrayList<Object>();
+    private int sectionNum;
+    private Object[] sections;
+    private int[] sectionPositions;
 
     public AmazingSimpleCursorAdapter (
         Context context, int layout, Cursor cursor, String headerField, String[] from, int[] to, int flags)
@@ -27,15 +31,30 @@ public class AmazingSimpleCursorAdapter extends AmazingAdapter {
         simpleCursorAdapter = new SimpleCursorAdapter(context, layout, cursor, from, to, flags);
 
         // Obtain section headers
+
+        sections = new Object[8];
+        sectionPositions = new int[sections.length];
+        sectionNum = 0;
+
         Object section = null;
+
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             ContentValues values = new ContentValues();
             DatabaseUtils.cursorRowToContentValues(cursor, values);
             Object obj = values.get(headerField);
-            
-            if ((section == null && obj != null) || (section != null && !section.equals(obj))){
+
+            if ((section == null && obj != null) || (section != null && !section.equals(obj))) {
                 section = obj;
-                sections.add(section);
+
+                if (sectionNum >= sections.length) {
+                    sections = Arrays.copyOf(sections, sections.length * 2 + 1);
+                    sectionPositions = Arrays.copyOf(sectionPositions, sections.length);
+                }
+
+                sections[sectionNum] = section;
+                sectionPositions[sectionNum] = cursor.getPosition();
+
+                sectionNum++;
             }
         }
     }
@@ -57,15 +76,16 @@ public class AmazingSimpleCursorAdapter extends AmazingAdapter {
 
     @Override
     protected void onNextPageRequested (int page) {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     protected void bindSectionHeader (View view, int position, boolean displaySectionHeader) {
-        View header = view.findViewById(es.ucm.jorngeren13.R.id.header);
+        View header = view.findViewById(R.id.header);
         if (displaySectionHeader) {
             header.setVisibility(View.VISIBLE);
+            TextView text = (TextView) header.findViewById(R.id.date);
+            text.setText(sections[getSectionForPosition(position)].toString());
 
         } else {
             header.setVisibility(View.GONE);
@@ -79,25 +99,28 @@ public class AmazingSimpleCursorAdapter extends AmazingAdapter {
 
     @Override
     public void configurePinnedHeader (View header, int position, int alpha) {
-        // TODO Auto-generated method stub
-
+        TextView text = (TextView) header.findViewById(R.id.date);
+        text.setText(sections[getSectionForPosition(position)].toString());
     }
 
     @Override
     public int getPositionForSection (int section) {
-        // TODO Auto-generated method stub
-        return 0;
+        return sectionPositions[section];
     }
 
     @Override
     public int getSectionForPosition (int position) {
-        // TODO Auto-generated method stub
-        return 0;
+        int sect = Arrays.binarySearch(sectionPositions, 0, sectionNum, position);
+        if (sect >= 0) {
+            return sect;
+        } else {
+            return -sect - 2;
+        }
     }
 
     @Override
     public Object[] getSections () {
-        return sections.toArray();
+        return sections;
     }
 
 }
