@@ -15,7 +15,7 @@ public class SpeakersFragment extends JG13Fragment {
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         
-        final View rootView = inflater.inflate(R.layout.fragment_agenda, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_speakers, container, false);
         list = (ListView) rootView.findViewById(R.id.list);
         
         String[] cursorFields = new String[] { "name", "position", "picture" };

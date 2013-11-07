@@ -2,40 +2,42 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
-    
-   
-       	<TextView 
-           android:id="@+id/day"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginLeft="10dip"
-           android:text="@string/agenda_day"/>
-       
-       	<TextView 
-           android:id="@+id/start_time"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_toRightOf="@id/day"
-           android:layout_marginLeft="20dip"
-           android:text="@string/agenda_start_time"/>
 
-       	<TextView 
-           android:id="@+id/title"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_below="@id/day"
-           android:layout_marginLeft="10dip"
-           android:text="@string/agenda_title"
-           android:textAppearance="?android:attr/textAppearanceMedium"/>
- 
-   		<TextView 
-		    android:id="@+id/description"
-		    android:layout_width="wrap_content"
-	       	android:layout_height="wrap_content"
-	       	android:layout_below="@id/title"
-	        android:layout_marginLeft="10dip"
-	        android:text="@string/agenda_description" />
-    
-    
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/listitem_agenda_header" />
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:text="@string/agenda_day" />
+
+    <TextView
+        android:id="@+id/start_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_toRightOf="@id/day"
+        android:text="@string/agenda_start_time" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/day"
+        android:layout_marginLeft="10dip"
+        android:text="@string/agenda_title"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="10dip"
+        android:text="@string/agenda_description" />
 
 </RelativeLayout>

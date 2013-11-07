@@ -6,7 +6,7 @@
     tools:context=".HomeActivity"
     tools:ignore="MergeRootFrame" >
 
-    <ListView
+    <com.foound.widget.AmazingListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

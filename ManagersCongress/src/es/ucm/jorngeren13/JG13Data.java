@@ -13,46 +13,50 @@ public final class JG13Data {
         if (agendaCursor == null) {
             agendaCursor = new MatrixCursor(new String[] { "_id", "title", "description", "day", "start_time" });
 
+            final String STR_NOV_11 = "11 de Noviembre";
+            final String STR_NOV_12 = "12 de Noviembre";
+            final String STR_NOV_13 = "13 de Noviembre";
+            
             // First day
             agendaRow(
-                "Recepción de los asistentes y entrega de documentación y acreditaciones.", null, "11 Nov", "12:00");
-            agendaRow("Inauguración de las XXXI Jornadas de Gerencia Universitaria.", null, "11 Nov", "13:00");
+                "Recepción de los asistentes y entrega de documentación y acreditaciones.", null, STR_NOV_11, "12:00");
+            agendaRow("Inauguración de las XXXI Jornadas de Gerencia Universitaria.", null, STR_NOV_11, "13:00");
             agendaRow(
                 "Conferencia: Reinventando la toma de decisiones en la Universidad.",
-                "José Ramón Chaves García. Magistrado de lo contencioso-administrativo.", "11 Nov", "13:15");
-            agendaRow("Cóctel en el Paraninfo.", null, "11 Nov", "14:15");
+                "José Ramón Chaves García. Magistrado de lo contencioso-administrativo.", STR_NOV_11, "13:15");
+            agendaRow("Cóctel en el Paraninfo.", null, STR_NOV_11, "14:15");
             agendaRow(
                 "Constitución de los grupos de trabajo en librerías emblemáticas de Madrid: La Central, Ocho y Medio y Tipos Infames.",
-                null, "11 Nov", "17:00");
-            agendaRow("Cóctel en el Palacio de Cibeles (sede del Ayuntamiento de Madrid)", null, "11 Nov", "21:30");
+                null, STR_NOV_11, "17:00");
+            agendaRow("Cóctel en el Palacio de Cibeles (sede del Ayuntamiento de Madrid)", null, STR_NOV_11, "21:30");
 
             // Second day
             agendaRow(
                 "Mesa redonda: Reducción de costes y optimización de recursos.",
-                "Moderador: Teodoro Conde Minaya. Gerente UAM.", "12 Nov", "09:00");
-            agendaRow(" Pausa-café.", null, "12 Nov", "11:00");
-            agendaRow("Talleres.", null, "12 Nov", "11:30");
+                "Moderador: Teodoro Conde Minaya. Gerente UAM.", STR_NOV_12, "09:00");
+            agendaRow(" Pausa-café.", null, STR_NOV_12, "11:00");
+            agendaRow("Talleres.", null, STR_NOV_12, "11:30");
             agendaRow(
                 "Mesa redonda: Alternativas a la financiación pública y captación de fondos.",
-                "Moderador: Jordi Montserrat Garrocho. Gerente UNED.", "12 Nov", "12:30");
-            agendaRow("Almuerzo en el Museo del Traje.", null, "12 Nov", "14:30");
+                "Moderador: Jordi Montserrat Garrocho. Gerente UNED.", STR_NOV_12, "12:30");
+            agendaRow("Almuerzo en el Museo del Traje.", null, STR_NOV_12, "14:30");
             agendaRow(
-                "Conferencia: Gerencia en la Universidad: Visión en Acción.", "Javier Oliva López", "12 Nov", "16:30");
-            agendaRow("Mesa de gerentes.", null, "12 Nov", "17:30");
-            agendaRow("Cena institucional.", null, "12 Nov", "21:30");
+                "Conferencia: Gerencia en la Universidad: Visión en Acción.", "Javier Oliva López", STR_NOV_12, "16:30");
+            agendaRow("Mesa de gerentes.", null, STR_NOV_12, "17:30");
+            agendaRow("Cena institucional.", null, STR_NOV_12, "21:30");
 
             // Third day
             agendaRow(
                 "Conferencia: \"Educación universitaria y Fundaciones americanas\"",
                 "Eelco Keij. Especialista en fundraising. Fundador de KeyLance Consultancy LLC en Nueva York.",
-                "13 Nov", "09:30");
-            agendaRow("Talleres.", null, "13 Nov", "10:30");
-            agendaRow("Pausa-café.", null, "13 Nov", "11:30");
+                STR_NOV_13, "09:30");
+            agendaRow("Talleres.", null, STR_NOV_13, "10:30");
+            agendaRow("Pausa-café.", null, STR_NOV_13, "11:30");
             agendaRow(
                 "Mesa redonda: Gestión de personas en tiempos de crisis. Nuevos enfoques en la gestión de los recursos humanos.",
-                "Moderadora: Carmen García Elias. Gerente UPM", "13 Nov", "12:00");
-            agendaRow("Clausura de las jornadas.", null, "13 Nov", "14:00");
-            agendaRow("Cóctel de despedida.", null, "13 Nov", "14:15");
+                "Moderadora: Carmen García Elias. Gerente UPM", STR_NOV_13, "12:00");
+            agendaRow("Clausura de las jornadas.", null, STR_NOV_13, "14:00");
+            agendaRow("Cóctel de despedida.", null, STR_NOV_13, "14:15");
         }
 
         return agendaCursor;
