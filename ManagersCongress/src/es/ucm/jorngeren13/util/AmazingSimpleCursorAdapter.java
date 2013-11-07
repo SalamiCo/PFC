@@ -7,6 +7,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -121,6 +122,10 @@ public class AmazingSimpleCursorAdapter extends AmazingAdapter {
     @Override
     public Object[] getSections () {
         return sections;
+    }
+
+    public void setViewBinder (ViewBinder viewBinder) {
+        simpleCursorAdapter.setViewBinder(viewBinder);
     }
 
 }
