@@ -68,27 +68,30 @@ public final class JG13Data {
 
     public static Cursor getSpeakersCursor () {
         if (speakersCursor == null) {
-            speakersCursor = new MatrixCursor(new String[] { "_id", "name", "position", "picture" });
+            speakersCursor = new MatrixCursor(new String[] { "_id", "name", "position", "picture", "cv" });
 
             speakerRow(
-                "Jose Ramón Chaves García", "Magistrado de lo Contencioso-Administrativo", R.drawable.speaker_chaves);
-            speakerRow("Teodoro Conde Minaya", "Gerente de la UAM", R.drawable.speaker_conde_minaya);
-            speakerRow("Carmen García Elías", "Gerente de la UPM", R.drawable.speaker_garcia_elias);
+                "Jose Ramón Chaves García", "Magistrado de lo Contencioso-Administrativo", R.drawable.speaker_chaves,
+                "http://www.ucm.es/data/cont/docs/152-2013-07-12-CURRICULUM%20abreviado%20JR.pdf" );
+            speakerRow("Teodoro Conde Minaya", "Gerente de la UAM", R.drawable.speaker_conde_minaya, null);
+            speakerRow("Carmen García Elías", "Gerente de la UPM", R.drawable.speaker_garcia_elias, 
+                        "https://www.ucm.es/data/cont/media/www/pag-27395/Carmen%20Garc%C3%ADa%20El%C3%ADas/CURRICULUM%20BREVE%20CGE%20sin%20foto.doc");
             speakerRow(
                 "Eelco Keij", "Especialista en fundraising. Fundador de KeyLance Consultancy LLC en Nueva York",
-                R.drawable.speaker_keij);
-            speakerRow("Jordi Montserrat Garrocho", "Gerente de la UNED", R.drawable.speaker_montserrat);
+                R.drawable.speaker_keij, "https://www.ucm.es/data/cont/media/www/pag-27395/Curriculum%20KeyLance%20Consultancy%20LLC%20(espanol).docx");
+            speakerRow("Jordi Montserrat Garrocho", "Gerente de la UNED", R.drawable.speaker_montserrat,
+                        "http://www.ucm.es/data/cont/docs/152-2013-07-12-C.V.%20Jordi%20Montserrat%20Garrocho.pdf");
             speakerRow(
                 "Javier Oliva Jópez",
                 "Licenciado en Ciencias Económicas y Empresariales en la especialidad de Dirección y Gestión de empresas",
-                R.drawable.speaker_oliva);
+                R.drawable.speaker_oliva, "http://www.ucm.es/data/cont/docs/152-2013-07-12-CV.pdf");
         }
 
         return speakersCursor;
     }
 
-    private static void speakerRow (String name, String position, int picture) {
-        speakersCursor.addRow(new Object[] { ++index, name, position, picture });
+    private static void speakerRow (String name, String position, int picture, String cv) {
+        speakersCursor.addRow(new Object[] { ++index, name, position, picture, cv });
     }
 
     private JG13Data () {
