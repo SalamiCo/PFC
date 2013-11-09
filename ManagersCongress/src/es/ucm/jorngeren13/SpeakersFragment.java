@@ -64,7 +64,7 @@ public class SpeakersFragment extends JG13Fragment {
                 new AlertDialog.Builder(context)
                     .setTitle(R.string.dialog_title)
                     .setMessage(R.string.dialog_message)
-                    .setPositiveButton(R.string.dialog_ok_button, new DialogInterface.OnClickListener() {
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         
                         @Override
                         public void onClick (DialogInterface dialog, int which) {
@@ -72,7 +72,7 @@ public class SpeakersFragment extends JG13Fragment {
                             startActivity(browser);
                         }
                     })
-                    .setNegativeButton(R.string.dialog_cancel_button, new DialogInterface.OnClickListener() {
+                    .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                         
                         @Override
                         public void onClick (DialogInterface dialog, int which) {

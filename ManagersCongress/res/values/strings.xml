@@ -38,7 +38,5 @@
     <!-- Alert Dialog -->
     <string name="dialog_title">Download Speaker\'s CV</string>
     <string name="dialog_message">Wifi isn\'t connected. Do you want to continue with the download?</string>
-    <string name="dialog_ok_button">Yes</string>
-    <string name="dialog_cancel_button">Cancel</string>
 
 </resources>

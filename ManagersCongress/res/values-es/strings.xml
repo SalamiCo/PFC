@@ -37,8 +37,6 @@
     
     <!-- Alert Dialog -->
     <string name="dialog_title">Descargar CV del ponente</string>
-    <string name="dialog_message">Wifi no conectado. Desea continuar con la descarga?</string>
-    <string name="dialog_ok_button">Si</string>
-    <string name="dialog_cancel_button">Cancelar</string>
+    <string name="dialog_message">Wifi no conectado. ¿Desea continuar con la descarga?</string>
 
 </resources>
