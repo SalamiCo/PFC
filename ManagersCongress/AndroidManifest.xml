@@ -8,6 +8,9 @@
         android:minSdkVersion="9"
         android:targetSdkVersion="18" />
 
+    <!-- Allows the API to check the connection status -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/app_icon"

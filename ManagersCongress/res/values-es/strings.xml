@@ -34,6 +34,11 @@
        Telefonos: 91 394 35 70 - 91 394 34 64
     </string>
     <string name="details_button">Ver mapa</string>
-        
+    
+    <!-- Alert Dialog -->
+    <string name="dialog_title">Descargar CV del ponente</string>
+    <string name="dialog_message">Wifi no conectado. Desea continuar con la descarga?</string>
+    <string name="dialog_ok_button">Si</string>
+    <string name="dialog_cancel_button">Cancelar</string>
 
 </resources>

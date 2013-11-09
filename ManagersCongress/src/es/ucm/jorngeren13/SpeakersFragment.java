@@ -1,7 +1,12 @@
 package es.ucm.jorngeren13;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
@@ -33,15 +38,51 @@ public class SpeakersFragment extends JG13Fragment {
 
             @Override
             public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
-                speakersCursor.moveToPosition(position);
-                String cv = speakersCursor.getString(4); // Column 4 is cv's link
-                if(cv != null){
-                    Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse(cv));
-                    startActivity(browser);
-                }  
+                showCv(view.getContext(), position); 
             }
         });
         return rootView;
+    }
+    
+    private void showCv(Context context, int position){
+        speakersCursor.moveToPosition(position);
+        final String cv = speakersCursor.getString(4); // Column 4 is cv's link
+        
+        if(cv != null){
+            // If not connected to Wifi, show an information message
+            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+            
+            if(activeNetwork != null && activeNetwork.getType() == ConnectivityManager.TYPE_WIFI 
+                    && activeNetwork.isConnected()){
+                
+                Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse(cv));
+                startActivity(browser);
+                
+            }else{
+                
+                new AlertDialog.Builder(context)
+                    .setTitle(R.string.dialog_title)
+                    .setMessage(R.string.dialog_message)
+                    .setPositiveButton(R.string.dialog_ok_button, new DialogInterface.OnClickListener() {
+                        
+                        @Override
+                        public void onClick (DialogInterface dialog, int which) {
+                            Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse(cv));
+                            startActivity(browser);
+                        }
+                    })
+                    .setNegativeButton(R.string.dialog_cancel_button, new DialogInterface.OnClickListener() {
+                        
+                        @Override
+                        public void onClick (DialogInterface dialog, int which) {
+                            // Do nothing
+                        }
+                    })
+                    .show();
+            }
+            
+        }
     }
 
 }
