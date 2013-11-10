@@ -1,12 +1,17 @@
 package es.ucm.jorngeren13;
 
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
 import com.foound.widget.AmazingListView;
 
 import es.ucm.jorngeren13.util.AmazingSimpleCursorAdapter;
@@ -43,7 +48,30 @@ public final class AgendaFragment extends JG13Fragment {
 
         list.setPinnedHeaderView(getLayoutInflater(saved).inflate(R.layout.listitem_agenda_header, list, false));
         list.setAdapter(adapter);
+        
+        // Required for the menu
+        setHasOptionsMenu(true);
 
         return rootView;
     }
+
+    @Override
+    public void onCreateOptionsMenu (Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_agenda, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.menu_full_details:
+                Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.ucm.es/jornadasgerencia/programa-1"));
+                startActivity(browser);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        
+    }
+    
 }
