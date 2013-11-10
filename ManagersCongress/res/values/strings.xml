@@ -38,5 +38,8 @@
     <!-- Alert Dialog -->
     <string name="dialog_title">Download Speaker\'s CV</string>
     <string name="dialog_message">Wifi isn\'t connected. Do you want to continue with the download?</string>
+    
+    <!-- Agenda Menu -->
+    <string name="menu_full_details">See full details</string>
 
 </resources>
