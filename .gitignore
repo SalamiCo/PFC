@@ -12,6 +12,17 @@
 **/bin/
 **/gen/
 
+# Workwaround for git < 1.8.2
+bin/
+gen/
+*/bin/
+*/gen/
+*/*/bin
+*/*/gen
+*/*/*/bin
+*/*/*/gen
+
+
 # Local configuration file (sdk path, etc)
 local.properties
 
