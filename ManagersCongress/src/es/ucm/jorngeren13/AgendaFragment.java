@@ -40,8 +40,10 @@ public final class AgendaFragment extends JG13Fragment {
                 if (cursor.getString(column) == null) {
                     view.setVisibility(View.GONE);
                     return true;
+                    
                 }
-
+                
+                view.setVisibility(View.VISIBLE);
                 return false;
             }
         });
