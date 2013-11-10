@@ -41,5 +41,6 @@
     
     <!-- Agenda Menu -->
     <string name="menu_full_details">See full details</string>
+    <string name="toast_no_cv">No details available</string>
 
 </resources>
